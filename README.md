@@ -40,7 +40,7 @@ En **42 Telefónica**, creemos en la democratización de la educación tecnológ
 
 ## 🌐 Contacto
 - **LinkedIn**: [Mi Perfil de LinkedIn](https://www.linkedin.com/in/tu-perfil)
-- **Email**: [tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)
+- **Email**: [Mi email](mailto:tu-email@ejemplo.com)
 
 ---
 
