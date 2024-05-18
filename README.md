@@ -1,4 +1,4 @@
-<a href="#" onclick="return false;"><img alt="42 Logo" src="https://github.com/nsfacila/nsfacila/blob/main/42%20banner.gif"></a>
+<a href="#" onclick="return false;"><img alt="42 Logo" src="https://github.com/nsfacila/nsfacila/blob/main/42banner.gif"></a>
 
 42 Telefónica es un campus innovador de formación en programación, el cual es parte de la red global de escuelas 42. Este proyecto educativo, lanzado inicialmente por Xavier Niel en Francia, se ha expandido a varios países, incluyendo España bajo el patrocinio de Telefónica. Esta iniciativa se caracteriza por un modelo pedagógico revolucionario que elimina clases tradicionales, horarios fijos y profesores, ofreciendo un aprendizaje completamente basado en proyectos y trabajo en equipo.
 
