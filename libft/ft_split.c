@@ -6,7 +6,7 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:22:34 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/17 23:46:09 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/19 23:41:24 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,23 +63,33 @@ void	*ft_free(char **strs, int size)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
+	int		cnt[2];
 	int		start;
 	char	**final;
 
 	final = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!final)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i] != '\0')
+	cnt[0] = 0;
+	cnt[1] = 0;
+	while (s[cnt[0]] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		start = i;
-		while (s[i] != c && s[i] != '\0')
-			i++;
+		while (s[cnt[0]] == c)
+			cnt[0]++;
+		start = cnt[0];
+		while (s[cnt[0]] != c && s[cnt[0]] != '\0')
+			cnt[0]++;
+		if (cnt[0] > start)
+		{
+			final[cnt[1]] = ft_givemeastr((char *)s, start, cnt[0]);
+			if (!final[cnt[1]++])
+				return (ft_free(final, cnt[1]));
+		}
+	}
+	final[cnt[1]] = NULL;
+	return (final);
+}
+		/*
 		if (i > start)
 		{
 			final[j] = ft_givemeastr((char *)s, start, i);
@@ -93,4 +103,4 @@ char	**ft_split(char const *s, char c)
 	}
 	final[j] = NULL;
 	return (final);
-}
+}*/

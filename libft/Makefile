@@ -6,7 +6,7 @@
 #    By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 17:31:17 by noelsanc          #+#    #+#              #
-#    Updated: 2024/05/17 23:21:31 by noelsanc         ###   ########.fr        #
+#    Updated: 2024/05/19 21:38:06 by noelsanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ ft_isascii.c\
 ft_isdigit.c\
 ft_isprint.c\
 ft_itoa.c\
+ft_lstnew.c\
+ft_strmapi.c\
 ft_memchr.c\
 ft_memmove.c\
 ft_memset.c\
