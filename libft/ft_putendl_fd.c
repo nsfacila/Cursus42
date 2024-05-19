@@ -6,7 +6,7 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 20:30:15 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/13 19:32:42 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/17 23:27:54 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i] == '\0')
+	while (s[i] != 0)
 	{
 		write (fd, &s[i], 1);
 		i++;

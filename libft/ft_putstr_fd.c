@@ -6,7 +6,7 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:59:09 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/07 18:29:25 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/17 23:34:19 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i] != 0)
+	{
 		write(fd, &s[i], 1);
-	i++;
+		i++;
+	}
 }

@@ -6,13 +6,13 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:22:34 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/17 22:50:05 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/17 23:46:09 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_count_words(char const *str, char c)
+static int	ft_count_words(char const *str, char c)
 {
 	int	i;
 	int	words;
@@ -94,18 +94,3 @@ char	**ft_split(char const *s, char c)
 	final[j] = NULL;
 	return (final);
 }
-
-/*
-int main()
-{
-	char	str[]= "hola me llamo noelia";
-	int		start = 1;
-	int		end = 4;
-	printf("%s", ft_givemeastr(str, start, end));
-}
-int main()
-{
-	char s[] = "HOLA, MU,NDO";
-	char letra = ',';
-	printf("%d", ft_count_words(s, letra));
-}*/
