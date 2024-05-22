@@ -6,9 +6,11 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 20:20:50 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/04/15 18:49:27 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:43:05 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

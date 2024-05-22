@@ -6,11 +6,10 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:06:29 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/01 11:42:50 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:43:49 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)

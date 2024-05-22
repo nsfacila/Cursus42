@@ -6,11 +6,10 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:52:09 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/01 11:42:18 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:41:48 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

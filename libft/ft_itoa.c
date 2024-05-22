@@ -6,12 +6,11 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 19:35:37 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/17 23:46:22 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:43:19 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 static	size_t	len_n(long n)
 {

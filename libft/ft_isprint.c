@@ -6,11 +6,10 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:29:18 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/04/16 22:10:51 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:43:12 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_isprint(int c)

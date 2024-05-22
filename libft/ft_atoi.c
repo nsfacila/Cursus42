@@ -6,11 +6,10 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 16:47:56 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/17 23:46:48 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:41:42 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_atoi(const char *str)

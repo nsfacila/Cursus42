@@ -6,11 +6,10 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:39:14 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/04/16 22:09:46 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:42:40 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_isascii(int c)
