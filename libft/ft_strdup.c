@@ -6,12 +6,11 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:49:50 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/17 23:42:36 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:44:16 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stddef.h"
 
 char	*ft_strdup(const char *s1)
 {

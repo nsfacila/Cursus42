@@ -6,11 +6,10 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 12:29:57 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/01 13:53:25 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:44:08 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)

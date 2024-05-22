@@ -6,11 +6,10 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:42:29 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/01 11:03:43 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:44:53 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

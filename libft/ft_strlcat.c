@@ -6,11 +6,10 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 18:07:26 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/01 11:37:22 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:44:30 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
