@@ -6,7 +6,7 @@
 #    By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 17:31:17 by noelsanc          #+#    #+#              #
-#    Updated: 2024/05/19 21:38:06 by noelsanc         ###   ########.fr        #
+#    Updated: 2024/05/22 22:41:19 by noelsanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ ft_isascii.c\
 ft_isdigit.c\
 ft_isprint.c\
 ft_itoa.c\
-ft_lstnew.c\
 ft_strmapi.c\
 ft_memchr.c\
+ft_memcmp.c\
 ft_memmove.c\
 ft_memset.c\
 ft_memcpy.c\
@@ -46,19 +46,35 @@ ft_strrchr.c\
 ft_strnstr.c\
 ft_substr.c\
 ft_striteri.c\
+ft_strtrim.c\
 ft_strjoin.c\
 ft_strdup.c\
 ft_tolower.c\
 ft_toupper.c\
 
-
+BONUS_SRC = \
+	ft_lstadd_back_bonus.c\
+	ft_lstadd_front_bonus.c\
+	ft_lstclear_bonus.c\
+	ft_lstdelone_bonus.c\
+	ft_lstlast_bonus.c\
+	ft_lstnew_bonus.c\
+	ft_lstsize_bonus.c\
+	ft_lstiter_bonus.c\
+	ft_lstmap_bonus.c\
 
 OBJS = $(SRC:.c=.o)
+
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 all:  $(NAME)
 
 $(NAME):$(OBJS)
 	ar rcs $(NAME) $(OBJS)
+	
+bonus: $(BONUS_OBJ)
+	gcc -c $(CFLAGS) $(BONUS_SRC)
+	ar rcs $(NAME) $(BONUS_OBJ)
 	
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -67,9 +83,10 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(OBJS)
+	rm -f $(NAME) $(BONUS_OBJ)
 
 re:	fclean all
 
-.PHONY: fclean clean all re
+.PHONY: fclean clean all re bonus
 
