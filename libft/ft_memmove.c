@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 16:10:13 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/05/22 22:43:38 by noelsanc         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -38,13 +27,4 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-/*
 
-int main()
-{
-	char src[] = "hey";
-	char dest[] = " Hello word";
-	ft_memmove(dest, src, 2);
-	printf("%s",src);
-	printf("%s",dest);
-}*/
