@@ -26,7 +26,7 @@ O consultar en estos enlaces: 👉 [read](https://linux.die.net/man/3/read) 👉
 
 ### Pasos básicos para operar con un archivo.
 
-1. Debemos de abrir el archivo y sus permisos y asignarle el fd correspondiente. 🔶 E.g `int fd = open('/usr/suker/file.txt', O_RDWR);`.
+1. Debemos de abrir el archivo y sus permisos y asignarle el fd correspondiente. 🔶 E.g `int fd = open('/usr/nsfacila/file.txt', O_RDWR);`.
    
 - Si `fd = -1`, el archivo no existe el archivo o no se ha podido abrir correctamente.
 - Si `fd > 2`, el archivo ha sido abierto correctamente.
