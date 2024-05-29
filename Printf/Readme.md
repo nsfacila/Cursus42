@@ -13,6 +13,8 @@ Las funciones variádicas son aquellas que pueden aceptar un número indetermina
 
 La función `printf` es una función estándar de C utilizada para imprimir datos formateados a la salida estándar, generalmente la consola. Su prototipo se encuentra en el archivo de cabecera `<stdio.h>`.
 
+Puedes encontrar más detalles sobre el proyecto:[Uso de `printf`](https://cdn.intra.42.fr/pdf/pdf/132068/es.subject.pdf)
+
 ## Sintaxis básica de `printf`
 ```c
 int printf(const char *format, ...);
