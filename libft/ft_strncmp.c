@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/23 20:33:51 by noelsanc          #+#    #+#             */
+/*   Updated: 2024/05/23 20:33:57 by noelsanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -16,12 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int main()
-{
-const char str1[] = "Hola";
-const char str2[] = "HOLA, MUNDO";
-size_t n = 4;
-ft_strncmp (str1 , str2, n);
-printf("%d", ft_strncmp(str1, str2, n));
-}*/

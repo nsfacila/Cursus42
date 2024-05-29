@@ -1,7 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/23 20:35:03 by noelsanc          #+#    #+#              #
+#    Updated: 2024/05/23 20:35:44 by noelsanc         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 
 NAME = libft.a
 
-CC = gcc
+CC = clang
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -62,7 +74,7 @@ $(NAME):$(OBJS)
 	ar rcs $(NAME) $(OBJS)
 	
 bonus: $(BONUS_OBJ)
-	gcc -c $(CFLAGS) $(BONUS_SRC)
+	clang -c $(CFLAGS) $(BONUS_SRC)
 	ar rcs $(NAME) $(BONUS_OBJ)
 	
 %.o:%.c

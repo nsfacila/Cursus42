@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/23 20:33:11 by noelsanc          #+#    #+#             */
+/*   Updated: 2024/05/23 20:39:34 by noelsanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -25,13 +36,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	return (lenght_s + lenght_d);
 }
-/*
-int main()
-{
-	char	dest[] = "Hola";
-	const char	src[] = "Adios";
-	size_t total = sizeof(dest);
-	printf("antes:dest = %s", dest);
-	printf("%zu", ft_strlcat(dest, src, total));
-	printf("despues: dest %s", dest);
-}*/
