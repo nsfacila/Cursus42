@@ -14,9 +14,13 @@
 
 void	ft_putstr(const char *s)
 {
+	int i;
+
+	i = 0;
 	while (*s != '\0')
 	{
-		write(1, &s, 1);
+		i += ft_putchar(*s);
 		s++;
 	}
 }
+//Se declara una variable tipo int llamada i y se le asigna el valor de 0 para inicializarla. Esta variable se usa para almacenar el valor de i y que cuente el número de caracteres que se imprimen en la función ft_putchar. Se crea un bucle while que se ejecutará mientras el puntero s no sea igual a '\0'. Dentro del bucle se incrementa el valor de i con el valor de la función ft_putchar, devolviendo el numero de caracteres que imprima. Se incrementa el puntero s para avanzar en la
