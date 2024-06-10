@@ -19,7 +19,11 @@
 
 int	ft_printf(const char *format, ...);
 int	ft_putchar(char c);
-void ft_putnbr(int n);
+int ft_putnbr(int n);
 int ft_printf_prueba(char *str, ...);
+int ft_putstr(const char *s);
+int ft_puthexa(unsigned int nb, char *base);
+int ft_putptr(unsigned long long n);
+int ft_putunsigned(unsigned int n);
 
 #endif

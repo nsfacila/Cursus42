@@ -29,10 +29,10 @@ int	ft_printf_prueba(char *str, ...)
 			}
 			if (*str == 'p')
 			{
-				cout += ft_putptr(va_arg(cesta, void *))
+				cout += ft_putptr(va_arg(cesta, unsigned long long));
 				str ++;
 			}
-			if(+str == 'x')
+			if(*str == 'x')
 			{
 				cout += ft_puthexa(va_arg(cesta, unsigned int), "0123456789abcdef");
 				str++;
@@ -52,7 +52,7 @@ int	ft_printf_prueba(char *str, ...)
 	}
 	return (cout);
 }
-
+/*
 int	main(void)
 {
 	int	num;
@@ -63,3 +63,4 @@ int	main(void)
 	printf("Me ha devuelto que ha impreso %d caracteres.\n", num);
 	return (0);
 }
+*/

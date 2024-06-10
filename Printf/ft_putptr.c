@@ -14,11 +14,11 @@
 
 int	ft_putptr(unsigned long long n)
 {
-	int	i;
-
+	int i;
+	
 	i = 0;
-	i += ft_putstr('0x');
-	i += ft_puthexa(n, 0);
+	i += ft_putstr("0x");
+	i += ft_puthexa(n, "0123456789abcdef");
 	return (i);
 }
 /* Usamos la funcion ft_putptr para imprimir un puntero. Usamos unsigned long long ya que un puntero ptr se convierte a un valor entero sin signo de 64 bits (unsigned long long). Esto es porque una dirección de memoria puede representarse como un entero grande, y unsigned long long es adecuado para almacenar direcciones en sistemas de 64 bits.

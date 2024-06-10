@@ -34,8 +34,9 @@ int	ft_putnbr(int n)
 	}
 	else
 		i += ft_putchar(n + '0');
+	return (i);
 }
-
+/*
 int main()
 {
 	int	nums = -123;
@@ -45,3 +46,4 @@ int main()
 	return (0);
 	}
 }
+*/

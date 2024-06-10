@@ -17,13 +17,20 @@ FLAGS = -Wall -Wextra -Werror
 CC = clang
 
 SRC = \
+	ft_printf_prueba.c \
+	ft_putchar.c \
+	ft_putstr.c \
+	ft_putnbr.c \
+	ft_puthexa.c \
+	ft_putptr.c \
+	ft_putunsigned.c\
 
-OBJ = $(SRC:.C=.0)
+OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(FLAGS) -c $(src)
+	$(CC) $(FLAGS) -c $(SRC)
 	ar rcs $(NAME)	$(OBJ)
 
 %.o :%.c

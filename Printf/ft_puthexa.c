@@ -14,8 +14,6 @@
 
 int	ft_puthexa(unsigned int nb, char *base)
 {
-	char	upper_base[16] = "0123456789ABCDEF";
-	char	lower_base[16] = "0123456789abcdef";
 	int		i;
 
 	i = 0;
@@ -40,3 +38,4 @@ int main()
 	return 0;
 }
 La función ft_puthexa toma dos argumentos: un número entero sin signo nb y una cadena de caracteres base que contiene los dígitos hexadecimales. La función imprime el número nb en formato hexadecimal utilizando los dígitos hexadecimales de la cadena base.
+*/
