@@ -19,10 +19,10 @@ int	ft_putunsigned(unsigned int n)
 	i = 0;
 	if (n > 10)
 	{
-		i = ft_putunsigned(n % 10);
-		i = ft_putchar(n % 10 + '0');
+		i += ft_putunsigned(n /10);
+		i += ft_putchar(n % 10 + '0');
 	}
 	else
-		i = ft_putchar(n + '0');
+		i += ft_putchar(n + '0');
 	return (i);
 }

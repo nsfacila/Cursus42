@@ -28,8 +28,21 @@ int	ft_printf_prueba(char *str, ...)
 				str++;
 			}
 			if (*str == 'p')
+			{
 				cout += ft_putptr(va_arg(cesta, void *))
 				str ++;
+			}
+			if(+str == 'x')
+			{
+				cout += ft_puthexa(va_arg(cesta, unsigned int), "0123456789abcdef");
+				str++;
+			}
+			if(*str == 'X')
+			{
+				cout += ft_puthexa(va_arg(cesta, unsigned int), "0123456789ABCDEF");
+				str++;
+			}
+			
 		}
 		else
 		{

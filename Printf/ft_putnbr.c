@@ -14,27 +14,26 @@
 
 int	ft_putnbr(int n)
 {
-	char	c;
+	int	i;
+
+	i = 0;
 
 	if (n == -2147483648)
 	{
-		n = '-';
-		write (1, "-2147483648", 11 );
-		return ;
+		i += ft_putstr("-2147483648");
 	}
 	if (n < 0)
 	{
-		write(1, "-", 1);
+		i += ft_putchar('-');
 		n = -n;
 	}
 	if (n > 9)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		i += ft_putnbr(n / 10);
+		i += ft_putchar (n % 10 + '0');
 	}
 	else
-		n = n + '0';
-	ft_putchar(n);
+		i += ft_putchar(n + '0');
 }
 
 int main()
