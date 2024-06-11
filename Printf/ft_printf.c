@@ -60,19 +60,28 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (count);
 }
-/*
+
 int	main(void)
 {
 	int	num;
 
-	num = ft_printf("Tengo que imprimir esta frase sin porcentajes\n");
-	printf("Me ha devuelto que ha impreso %d caracteres.\n", num);
-	num = ft_printf("Tengo que imprimir la frase mayúscula y es %s\n", 'HOLA');
-	printf("Me ha devuelto que ha impreso %d caracteres.\n", num);
+    num = ft_printf("Tengo que imprimir el número %d\n", 42);
+    ft_printf("Me ha devuelto que ha impreso %d caracteres.\n", num);
+    num = ft_printf("Tengo que imprimir el número %d\n", 42);
+    printf("Me ha devuelto que ha impreso %d caracteres.\n", num);
+	
+    num = ft_printf("Tengo que imprimir la palabra %s\n", 'hola');
+    printf("Me ha devuelto que ha impreso %d caracteres.\n", num);
+    num = ft_printf("Tengo que imprimir la palabra %s\n", 'hola');
+    ft_printf("Me ha devuelto que ha impreso %d caracteres.\n", num);
+
+    num = ft_printf("Tengo que imprimir el número hexadecimal %x\n", 255);
+    printf("Me ha devuelto que ha impreso %d caracteres.\n", num);
+    num = ft_printf("Tengo que imprimir el número hexadecimal %x\n", 255);
+    ft_printf("Me ha devuelto que ha impreso %d caracteres.\n", num);
 	return (0);
 }
-
-
+/*
 int main()
 {
 	ft_printf("Character: %c\n", 'A');

@@ -24,6 +24,7 @@ SRC = \
 	ft_puthexa.c \
 	ft_putptr.c \
 	ft_putunsigned.c\
+	main.c\
 
 OBJ = $(SRC:.c=.o)
 

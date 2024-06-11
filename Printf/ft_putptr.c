@@ -14,11 +14,11 @@
 
 int	ft_putptr(void *n)
 {
-	int			i;
+	int						i;
 	unsigned long long int	ptr;
 
-	if (!n)
-		return (ft_putstr("(nil)"));
+	/*if (!n)
+		return (ft_putstr("(nil)"));*/
 	ptr = (unsigned long long int)n;
 	ft_putstr("0x");
 	i = ft_puthexa(ptr, "0123456789abcdef");
