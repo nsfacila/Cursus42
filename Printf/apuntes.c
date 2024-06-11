@@ -112,7 +112,7 @@ int ft_putnbr(int n) {
     }
     if (n < 0) {
         count += ft_putchar('-');
-        n = -n;
+        count += ft_putnbr(-n);
     }
     if (n >= 10) {
         count += ft_putnbr(n / 10);
