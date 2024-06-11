@@ -17,7 +17,7 @@ FLAGS = -Wall -Wextra -Werror
 CC = clang
 
 SRC = \
-	ft_printf_prueba.c \
+	ft_printf.c \
 	ft_putchar.c \
 	ft_putstr.c \
 	ft_putnbr.c \

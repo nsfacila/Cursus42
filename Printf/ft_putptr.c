@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putptr(unsigned long long n)
 {
 	int i;
-	
+
 	i = 0;
 	i += ft_putstr("0x");
 	i += ft_puthexa(n, "0123456789abcdef");

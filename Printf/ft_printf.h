@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 22:19:58 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/06/04 18:09:24 by noelsanc         ###   ########.fr       */
+/*   Created: 2024/05/29 22:40:04 by noelsanc          #+#    #+#             */
+/*   Updated: 2024/06/05 16:46:33 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdio.h>
+
+int	ft_printf(const char *str, ...);
+int	ft_putchar(char c);
+int ft_putnbr(int n);
+int ft_putstr(const char *s);
+int ft_puthexa(unsigned int nb, char *base);
+int ft_putptr(unsigned long long n);
+int ft_putunsigned(unsigned int n);
+
+#endif

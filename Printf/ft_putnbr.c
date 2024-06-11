@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int n)
 {
 	int	i;
 
 	i = 0;
-
 	if (n == -2147483648)
 	{
 		i += ft_putstr("-2147483648");
