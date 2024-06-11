@@ -6,18 +6,17 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:51:52 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/06/09 20:44:17 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/06/11 22:43:11 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthexa(unsigned int nb, char *base)
+int	ft_puthexa(unsigned long long int nb, char *base)
 {
 	int		i;
 
 	i = 0;
-
 	if (nb < 16)
 	{
 		i += ft_putchar(base[nb]);

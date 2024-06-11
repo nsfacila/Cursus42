@@ -6,7 +6,7 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 19:48:14 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/06/03 21:06:13 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/06/11 21:51:30 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 
 int	ft_putstr(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
+	if (!s)
+	{
+		return (ft_putstr("(null)"));
+	}
+	if (!*s)
+		return (0);
 	while (*s != '\0')
 	{
 		i += ft_putchar(*s);

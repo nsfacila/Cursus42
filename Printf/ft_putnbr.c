@@ -6,7 +6,7 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 21:07:00 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/06/05 17:29:24 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/06/11 20:37:44 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	ft_putnbr(int n)
 	{
 		i += ft_putstr("-2147483648");
 	}
-	if (n < 0)
+	else if (n < 0)
 	{
 		i += ft_putchar('-');
-		n = -n;
+		i += ft_putnbr(-n);
 	}
-	if (n > 9)
+	else if (n > 9)
 	{
 		i += ft_putnbr(n / 10);
 		i += ft_putchar (n % 10 + '0');
