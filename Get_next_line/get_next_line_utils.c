@@ -6,7 +6,7 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:46:02 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/07/10 12:02:16 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:58:34 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,26 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+/*
+char *ft_strchr(const char *s, int c) {
+    while (*s != '\0') {
+        if (*s == (char)c)
+            return (char *)s;
+        s++;
+    }
+    if (c == '\0')
+        return (char *)s;
+    return NULL;
+}
+*/
+
+get_next_line(fd):
+    static stored = ""
+    buffer = leer fd
+    mientras haya algo para leer:
+        stored = ft_strjoin(stored, buffer)
+        si ft_strchr(stored, '\n'):
+            line = extraer hasta '\n' de stored
+            actualizar stored sin la parte extraída
+            retornar line
+    retornar lo que queda en stored si no hay '\n'
