@@ -6,24 +6,11 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 16:57:49 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/07/17 20:02:54 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/07/18 20:31:28 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*ssize_t read(int fd, void *buffer, size_t nbyte)
-#include <unistd.h>
-
-void	putchar_test_file(char c)
-{
-	int	fd;
-
-	if (fd > 0)
-		write(1, &c, 1);
-	else
-		write(2, "prueba.txt not found.\n", 23);
-}
-int main
-*/
+#include "get_next_line.h"
 
 static char	*extract_line(char *stored)
 {
@@ -35,9 +22,8 @@ static char	*extract_line(char *stored)
 	i = 0;
 	while (stored[i] != '\n' && stored[i] != 0)
 		i++;
-	line = ft_calloc (sizeof(char) * (i + 2));
-	if (*line != 0)
-		return (0);
+	line = ft_calloc(sizeof(char) * (i + 2));
+
 	i = 0;
 	while (stored[i] != '\n')
 	{
@@ -45,22 +31,22 @@ static char	*extract_line(char *stored)
 		i++;
 	}
 	if (stored[i] == '\n')
-		*line = '\n';
+		line[i] = '\n';
 	line[i + 1] = '\0';
 	return (line);
 }
 
-static char	*ft_update_stored (char *stored)
+static char	*ft_update_stored(char *stored)
 {
 	int		i;
 	int		j;
 	char	*new_line;
 
+	if (!stored)
+		return (0);
 	i = 0;
 	while (stored[i] != '\n' && stored[i] != 0)
 		i++;
-	if (!stored)
-		return (0);
 	new_line = ft_calloc(sizeof(char) * (ft_strlen(stored) - i + 1));
 	if (!new_line)
 		return (0);
@@ -74,17 +60,44 @@ static char	*ft_update_stored (char *stored)
 	new_line[j] = '\0';
 	free(stored);
 	return (new_line);
-}/*
-static char	*read_to_store(fd, char *stored)
-{
-	char	*buffer;
-	int		read_bytes;
-
-	read_bytes = read(fd,stored, BUFFER_SIZE)
 }
-*/
-char	*get_next_line(int fd, char stored)
-{
-	
 
+char	*join_free(char *temp, char *stored)
+{
+	char	*aux;
+
+	if (!aux)
+		return (0);
+	aux = ft_strjoin(temp, stored);
+	free (stored);
+	return (aux);
+}
+
+char	*get_next_line(int fd)
+{
+	ssize_t		read_bytes;
+	char		*temp_buffer;
+	static char	*stored;
+	char		*line;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (0);
+	temp_buffer = ft_calloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!temp_buffer)
+		return (0);
+	read_bytes = 1;
+	while (ft_strchr(stored, '\n') && read_bytes > 0)
+	{
+		temp_buffer[read_bytes] = '\0';
+		stored = ft_strjoin(stored, temp_buffer);
+		read_bytes = read (fd, temp_buffer, BUFFER_SIZE);
+	}
+	if (read_bytes < 0)
+	{
+		free(stored);
+		return (NULL);
+	}
+	line = ft_extract_line(stored, '\n');
+	stored = ft_update_stored(stored);
+	return (line);
 }
