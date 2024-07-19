@@ -6,7 +6,7 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:46:02 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/07/17 19:20:51 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/07/19 16:33:55 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	char	*result;
 	char	*temp;
 
-	result = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1) * sizeof(char);
+	result = malloc(((ft_strlen(s1) + ft_strlen(s2)) + 1) * sizeof(char));
 	if (!result)
 		return (0);
 	temp = result;
@@ -60,25 +60,29 @@ size_t	ft_strlen(const char *str)
 
 char	*ft_calloc(size_t size, size_t count)
 {
-    char *str;
-    size_t i;
+	char	*str;
+	size_t	i;
 
-    str = malloc(count * size); // Asigna memoria para `count` elementos, cada uno de tamaño `size`.
-    if (!str)
-        return(0); // Verifica si la asignación de memoria falló.
-
-    i = 0;
-    while (i < size * count) { // Inicializa manualmente la memoria a cero.
-        str[i] = 0;
-        i++;
-    }
-    return(str); // Retorna el puntero `str` que ahora apunta a la memoria asignada e inicializada.
+	str = malloc(count * size);
+	if (!str)
+		return (0);
+	i = 0;
+	while (i < size * count)
+	{
+		str[i] = 0;
+		i++;
+	}
+	return (str);
 }
+/*Asigna memoria para `count` elementos, cada uno de tamaño size.
+Verifica si la asignación de memoria falló.
+Inicializa manualmente la memoria a cero.
+Retorna el puntero str que ahora apunta a la memoria asignada e inicializada.*/
 
-
+/*
 get_next_line(fd):
     static stored = ""
-    buffer = leer fd
+    buffer= leer fd
     mientras haya algo para leer:
         stored = ft_strjoin(stored, buffer)
         si ft_strchr(stored, '\n'):
@@ -86,3 +90,4 @@ get_next_line(fd):
             actualizar stored sin la parte extraída
             retornar line
     retornar lo que queda en stored si no hay '\n'
+*/
