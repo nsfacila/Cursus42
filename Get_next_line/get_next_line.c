@@ -6,38 +6,38 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 16:57:49 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/07/19 16:26:43 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/07/21 22:55:03 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*extract_line(char *stored)
+char	*ft_extract_line(char *stored)
 {
 	char	*line;
 	int		i;
 
-	if (!*stored)
+	if (!stored)
 		return (0);
 	i = 0;
-	while (stored[i] != '\n' && stored[i] != 0)
+	while (stored[i] != '\n' && stored[i] != '\0')
 		i++;
 	line = ft_calloc(sizeof(char), (i + 2));
 	if (!line)
 		return (0);
 	i = 0;
-	while (stored[i] != '\n')
+	while (stored[i] != '\n' && stored[i] != '\0')
 	{
 		line[i] = stored[i];
 		i++;
 	}
 	if (stored[i] == '\n')
-		line[i] = '\n';
-	line[i + 1] = '\0';
+		line[i++] = '\n';
+	line[i] = '\0';
 	return (line);
 }
 
-static char	*ft_update_stored(char *stored)
+char	*ft_update_stored(char *stored)
 {
 	int		i;
 	int		j;
@@ -46,7 +46,9 @@ static char	*ft_update_stored(char *stored)
 	if (!stored)
 		return (0);
 	i = 0;
-	while (stored[i] != '\n' && stored[i] != 0)
+	while (stored[i] != '\n' && stored[i] != '\0')
+		i++;
+	if (stored[i] != '\n') // Si se encuentra un '\n',incrementar i para omitirlo 
 		i++;
 	new_line = ft_calloc(sizeof(char), (ft_strlen(stored) - i + 1));
 	if (!new_line)
@@ -56,14 +58,14 @@ static char	*ft_update_stored(char *stored)
 	{
 		i++;
 		while (stored[i] != 0)
-			new_line[j++] = stored[i++];
+			new_line[j++] = stored[i++]; //copia el resto de la cadena
 	}
 	new_line[j] = '\0';
 	free(stored);
 	return (new_line);
 }
 
-char	*join_free(char *temp, char *stored)
+char	*ft_join_free(char *temp, char *stored)
 {
 	char	*aux;
 
@@ -74,7 +76,6 @@ char	*join_free(char *temp, char *stored)
 			return (NULL);
 		stored[0] = '\0';
 	}
-		return (0);
 	aux = ft_strjoin(temp, stored);
 	free (stored);
 	return (aux);
@@ -82,7 +83,7 @@ char	*join_free(char *temp, char *stored)
 /*Esta afuncion concatena dos cadenas(stored y temp), la almacena en una auxiliar, 
 libera stored para que no deje memoria asiganda previamente a store que ya no necesitamos y devuelve el puntero a la candena concatenada.
 La primera comprobacion de store nula, se realiza , para asignar memmoria de un colo caracter ('\0) y tenga un valor solido antes de concatenar
-*/
+
 
 char	*get_next_line(int fd)
 {
@@ -101,50 +102,48 @@ char	*get_next_line(int fd)
 	{
 		read_bytes = read (fd, temp_buffer, BUFFER_SIZE);
 		temp_buffer[read_bytes] = '\0';
-		stored = join_free(stored, temp_buffer);
+		stored = ft_join_free(stored, temp_buffer);
 		if (!stored)
 			return (NULL);
 	}
 	if (read_bytes < 0)
 	{
-		free(stored);
-		stored = NULL;
-		return (NULL);
+		return (free(stored), stored = NULL, NULL);
 	}
-	line = extract_line(stored);
+	line = ft_extract_line(stored);
+	stored = ft_update_stored(stored);
+	return (line);
+}
+*/
+
+char	*get_next_line(int fd)
+{
+	ssize_t		read_bytes;
+	char		temp_buffer[BUFFER_SIZE + 1];
+	static char	*stored = NULL;
+	char		*line;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	read_bytes = 1;
+	while (!ft_strchr(stored, '\n') && read_bytes > 0)
+	{
+		read_bytes = read(fd, temp_buffer, BUFFER_SIZE);
+		if (read_bytes < 0)
+			return (free(stored), stored = NULL, NULL);
+		temp_buffer[read_bytes] = '\0';
+		stored = ft_join_free(stored, temp_buffer);
+		if (!stored)
+			return (NULL);
+	}
+	line = ft_extract_line(stored);
 	stored = ft_update_stored(stored);
 	return (line);
 }
 
-
-/*
-char	*get_next_line(int fd)
+int main ()
 {
-	static char	*stack = NULL;
-	char		tmp[BUFFER_SIZE + 1];
-	char		*line;
-	ssize_t		readbytes;
-
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
-	readbytes = 1;
-	while (!ft_strchr(stack, '\n') && readbytes > 0)
-	{
-		readbytes = read(fd, tmp, BUFFER_SIZE);
-		if (readbytes < 0)
-			return (free(stack), stack = NULL, NULL);
-		tmp[readbytes] = '\0';
-		stack = joinfree(stack, tmp);
-		if (!stack)
-			return (NULL);
-	}
-	line = extract_line(stack);
-	stack = up_stack(stack);
-	return (line);
-*/
-int main()
-{
-	int	fd = open("text.txt", O_RDONLY);
+	int	fd = open("prueba.txt", O_RDONLY);
 	char	*line;
 
 	while ((line = get_next_line(fd)))

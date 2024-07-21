@@ -6,12 +6,11 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:46:02 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/07/19 16:33:55 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/07/21 21:50:25 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 char	*ft_strchr(const char *s, int c)
 {

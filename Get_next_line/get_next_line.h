@@ -6,7 +6,7 @@
 /*   By: noelsanc <noelsanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:50:40 by noelsanc          #+#    #+#             */
-/*   Updated: 2024/07/19 16:58:26 by noelsanc         ###   ########.fr       */
+/*   Updated: 2024/07/21 22:56:00 by noelsanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char		*ft_strchr(const char *s, int c);
-char		*ft_strjoin(const char *s1, const char *s2);
-size_t		ft_strlen(const char *str);
-char		*ft_calloc(size_t size, size_t count);
-char		*join_free(char *temp, char *stored);
-static char	*ft_update_stored(char *stored);
-static char	*extract_line(char *stored);
-char		*get_next_line(int fd);
-
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(const char *s1, const char *s2);
+size_t	ft_strlen(const char *str);
+char	*ft_calloc(size_t size, size_t count);
+char	*ft_join_free(char *temp, char *stored);
+char	*ft_update_stored(char *stored);
+char	*ft_extract_line(char *stored);
+char	*get_next_line(int fd);
 
 #endif
