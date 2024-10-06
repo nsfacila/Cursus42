@@ -13,63 +13,65 @@
 
 #include "./include/minitalk.h"
 
-void 	char_to_bit(int pid, int c)
+void	ft_check_args(int argc, char **argv)
 {
-	int i;
+	int	i;
 
-	i = 7;
-	while(i >= 0)
+	if (argc != 3)
 	{
-		if ((c >> i) & 1)
+		printf("Incorrect arguments number\n");
+		exit(EXIT_FAILURE);
+	}
+	i = 0;
+	while (argv[1][i] != '\0')
+	{
+		if (!ft_isdigit(argv[1][i]))
+		{
+			printf("Wrong PID! It must be a number.\n");
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
+}
+void	char_to_bit(int pid, int c)
+{
+	int	i;
+
+	i = 0;
+	while(i < 8)
+	{
+		if((c & (1 << i)) != 0)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		i--;
-
-		usleep(100);
+		usleep(40);
+		i++;
 	}
 }
 
-void	send_str(int pid, char *s)
-{
-	int i;
-
-	i = 0;
-	while (s[i])
-	{
-		char_to_bit(pid, s[i]);
-	i++;
-	}
-	char_to_bit(pid, '\0');
-}
 void	sig_user(int signal)
 {
-	int bit_control;
-
 	if (signal == SIGUSR1)
-		bit_control = 1;
-	else
-	{
-		ft_printf("RECEIVED\n");
-		exit(EXIT_SUCCESS);
-	}
+		printf("RECEIVED\n");
+		printf("\U0001F44D\n");
 }
 int main(int argc, char **argv)
 {	
 	int pid;
+	int i;
 
-	if (argc != 3)
-	{
-		ft_printf("incorrect arguments number\n");
-		return(1);
-	}
+	ft_check_args(argc, argv);
+	pid = ft_atoi(argv[1]);
 	signal(SIGUSR1, &sig_user);
 	signal(SIGUSR2, &sig_user);
-
-	pid = ft_atoi(argv[1]);
-	send_str(pid, argv[2]);
-
-	while(1)
-		sleep(1);
+	i = 0;
+	while (argv[2][i] != '\0')
+	{
+		char_to_bit(pid, argv[2][i]);
+		i++;
+	}
+	char_to_bit(pid, '\0');
 	return(0);
 }
+
+

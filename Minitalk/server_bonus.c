@@ -11,53 +11,55 @@
 /* ************************************************************************** */
 
 #include "./include/minitalk.h"
-#include "ft_printf.h"
 
-// Para la funcion signaction ,
-	//necesitamos un prototipo con tres variables para tener mas info sobre la señal recibida
-// La señal que recibimos,
-	//informacion acerca de la señal en este caso nos interesa el ID del proceso de la señal que envia el cliente y context aqui no se utiliza
 
-static void	siguser_handler(int signal, siginfo_t *info, void *context)
+void siguser_handler(int signal, siginfo_t *info, void *context)
 {
-	static int nb;  // almacena cada binario para formar nuestro caracter
-	static int bit; // el iterador que recorre los bits;
-	nb = 0;
-	bit = 7;
-	(void)context;
-	if (signal == SIGUSR1)
-		nb += 1 << bit; //'a' = 97 01100001 ,
-			movemos 7 posiciones y nos quedamos con el caracter mas a la izq ,
-			el 0 lo salta el 1 lo almacena , y movemos posicion con iterador
-	bit--;             
-		// cuando termina de almacenar los 8 bits para formar el caracter i será
-		-1 ya que decrementa 1 al final.
-	if (bit == -1)     
-		// cuando el iterador haya almacenado los 8 bits print el caracter
-	{
-		if (nb == '\0')
-			ft_printf("\n");
-		else
-			ft_printf("%d", nb);
-		nb = 0;
-			// IMPORTANTE reiniciar numero y el iterador para pasar al segundo caracter del texto
-		bit = 7;
-	}
-	kill(info->si_pid, SIGUSR1);
-		// la señal se ejecuta de esta manera ya que almacena mas informacion,
-		el pid del cliente que envia la señal
+    static int bit = 0; // Mantener el contador de bits
+    static unsigned char byte = 0; // Almacena el byte recibido
+
+    (void)context;
+    if (signal == SIGUSR1)
+    {
+        byte |= (1 << bit); // Acumula el bit
+    }
+    
+    bit++; // Incrementa el contador de bits
+
+    if (bit == 8) // Si se han recibido 8 bits
+    {
+        if (byte == '\0') // Fin del mensaje
+        {
+            printf("\n"); // Imprime una nueva línea
+            kill(info->si_pid, SIGUSR1); // Envía confirmación al cliente
+        }
+        else
+        {
+            printf("%c", byte); // Imprime el byte
+        }
+        // Reinicia las variables
+        bit = 0;
+        byte = 0;
+    }
 }
-int	main(void)
+
+
+int main(void)
 {
-	struct sigaction sa; // Para definir la estructura de sigaction es necesario
-	sa.sa_sigaction = siguser_handler;
-	sa.sa_flags = SA_SIGINFO;
-	sigaction(SIGUSR1, &sa, NULL);
-	sigaction(SIGUSR2, &sa, NULL);
-	ft_printf("Servidor:Obteniendo ID de prceso\n", getpid());
+	struct sigaction sa;
+
+	sa.sa_sigaction = signal_handler; // Estableces la función que manejará las señales.
+	sa.sa_flags = SA_SIGINFO; // Pides recibir información extra sobre la señal.
+	sigaction(SIGUSR1, &sa, NULL); // Configuras que cuando llegue SIGUSR1, se use 'signal_handler'.
+	sigaction(SIGUSR2, &sa, NULL); // Lo mismo para SIGUSR2.
+	printf("Servidor: Obteniendo ID de proceso %d\n", getpid());
 	while (1)
-	{
-		// pause();
-	}
+		pause(); // Esperar una señal para ejecutar el handler
 	return (0);
 }
+// sigaction es una estructura que se utiliza para definir cómo un programa manejará una señal específica. 
+/* sa.sa_sigaction:
+Aquí asignas la función que va a manejar la señal. En tu caso, es signal_handler.
+sa.sa_flags:
+Configura opciones adicionales sobre cómo se maneja la señal.
+SA_SIGINFO indica que queremos recibir información extra en nuestra función de manejo de señales, */

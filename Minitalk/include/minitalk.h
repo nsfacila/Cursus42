@@ -11,12 +11,15 @@
 # include <signal.h>
 # include <unistd.h>
 # include <aio.h>
-# include "../Printf/ft_printf.h"
+//# include "../Printf/ft_printf.h"
 
-void 			signal_handler(int sign);
-void			char_to_bit(int pid, int c);
-void			send_str(int pid, char *str);
-void			siguser_handler(int signal, siginfo_t *info, void *context);
-int				ft_atoi(char *str);
+void 		signal_handler(int sign);
+void		char_to_bit(int pid, int c);
+void		send_str(int pid, char *str);
+void		siguser_handler(int signal, siginfo_t *info, void *context);
+int			ft_atoi(char *str);
+int         ft_isdigit(char c);
+void        ft_putstr_fd(char *s, int fd);
+
 
 #endif

@@ -32,11 +32,13 @@ SERVER_SRC = \
 
 CLIENT_BONUS_SRC = \
 		client_bonus.c\
-		utils/ft_atoi.c
+		utils/ft_atoi.c\
+		utils/ft_isdigit.c
 
 SERVER_BONUS_SRC = \
 		server_bonus.c\
-		utils/ft_atoi.c
+		utils/ft_atoi.c\
+		utils/ft_isdigit.c
 
 CLIENT_OBJS = $(CLIENT_SRC:.c=.o)
 SERVER_OBJS = $(SERVER_SRC:.c=.o)
@@ -69,10 +71,14 @@ $(NAME_S): $(SERVER_OBJS) $(PRINT_PATH)
 #$(PRINT_PATH)
 
 $(NAME_CB): $(CLIENT_BONUS_OBJS) $(PRINT_PATH)
-		$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME_CB) $(CLIENT_BONUS_OBJS) $(PRINT_DIR)
+		@make -C Printf
+		@mv 	Printf/libftprintf.a .
+		$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME_CB) $(CLIENT_BONUS_OBJS)
 
 $(NAME_SB): $(SERVER_BONUS_OBJS) $(PRINT_PATH)
-		$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME_SB) $(SERVER_BONUS_OBJS) $(PRINT_DIR)
+		@make -C Printf
+		@mv 	Printf/libftprintf.a .
+		$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME_SB) $(SERVER_BONUS_OBJS)
 # %.o: %.c
 # 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
