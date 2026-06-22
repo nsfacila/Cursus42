@@ -1,39 +1,118 @@
-<a href="#" onclick="return false;"><img alt="42 Logo" src="https://github.com/nsfacila/nsfacila/blob/main/42banner.gif"></a>
 
-# ¡Hola! Soy Noelia 👋
+# 42 Málaga - Core Curriculum Projects
 
-## 🏄🏾 Sobre Mí 
-Soy una apasionada de la tecnología y actualmente estoy dando un emocionante giro en mi carrera al estudiar programación en Fundación Telefónica 42 en Málaga. Me dedico al mundo de la formación y quiero aplicar lo que aprenda sobre programación a este sector. Me encanta enfrentar nuevos desafíos y aprender constantemente.
+Repositorio que reúne algunos de los proyectos desarrollados durante mi formación en 42 Málaga (Fundación Telefónica), una escuela de programación basada en aprendizaje por proyectos, trabajo colaborativo y resolución autónoma de problemas.
 
-## 🚀 Objetivos
-Mi objetivo es comenzar en el sector tecnológico y combinarlo con mi experiencia como formadora para poder consolidar conocimientos y habilidades tech y así poder comunicarlas y guiar a otros. Aspiro a utilizar mi formación para ayudar a otros a descubrir y alcanzar su potencial en el ámbito tecnológico.
+## Sobre 42 Málaga
 
-# 42 Telefónica
+42 es un programa de formación en ingeniería de software centrado en el aprendizaje práctico mediante proyectos reales.
 
-42 Telefónica es un campus innovador de formación en programación, el cual es parte de la red global de escuelas 42. Este proyecto educativo, lanzado inicialmente por Xavier Niel en Francia, se ha expandido a varios países, incluyendo España bajo el patrocinio de Telefónica. Esta iniciativa se caracteriza por un modelo pedagógico revolucionario que elimina clases tradicionales, horarios fijos y profesores, ofreciendo un aprendizaje completamente basado en proyectos y trabajo en equipo.
+Su metodología se basa en:
 
-42 Telefónica es parte de la red global de campus de programación 42, que revoluciona la educación tecnológica con un enfoque pedagógico único y una sólida red de colaboradores empresariales.
+- Aprendizaje peer-to-peer.
+- Resolución de problemas.
+- Evaluación entre compañeros.
+- Trabajo autónomo.
+- Desarrollo de pensamiento algorítmico.
+- Programación a bajo nivel.
 
----
-
-## 🌟 Valores
-
-En **42 Telefónica**, creemos en la democratización de la educación tecnológica. Nuestros valores incluyen:
-- **Accesibilidad:** Educación gratuita y sin requisitos previos de diplomas.
-- **Colaboración:** Aprendizaje peer-to-peer que fomenta el trabajo en equipo.
-- **Innovación:** Un currículo que sigue la vanguardia tecnológica.
-- **Perseverancia:** Fomentamos la resiliencia y la dedicación a través de retos continuos.
+Durante el programa se desarrollan competencias técnicas y profesionales relacionadas con programación, sistemas, algoritmos y trabajo en equipo.
 
 ---
 
-## 📚 Método de Aprendizaje
+## Proyectos Incluidos
 
-`Aprendizaje autónomo y colaborativo:` Sin profesores ni clases tradicionales. Los estudiantes aprenden mediante proyectos prácticos y colaboración.
+### Libft
 
+Implementación de una biblioteca propia en C que replica y amplía funciones estándar de la librería libc.
 
-- Peer-to-Peer Learning
-- Proyectos prácticos desde fundamentos hasta IA y ciberseguridad.
-- Desarrollo de habilidades técnicas y softkills.
+**Competencias desarrolladas:**
+
+- Gestión de memoria.
+- Punteros.
+- Strings.
+- Estructuras de datos.
+- Modularidad del código.
+
+---
+
+### Get Next Line
+
+Desarrollo de una función capaz de leer archivos línea a línea gestionando buffers y memoria dinámica.
+
+**Competencias desarrolladas:**
+
+- Lectura de archivos.
+- Gestión de memoria dinámica.
+- Buffers.
+- Control de recursos.
+
+---
+
+### Printf
+
+Reimplementación de la función `printf()` de la biblioteca estándar de C.
+
+**Competencias desarrolladas:**
+
+- Variadic functions.
+- Parsing.
+- Conversión de tipos.
+- Formateo de salida.
+
+---
+
+### Minitalk
+
+Sistema de comunicación entre procesos utilizando señales UNIX.
+
+**Competencias desarrolladas:**
+
+- Señales.
+- Comunicación entre procesos.
+- Programación de sistemas.
+- Gestión de eventos.
+
+---
+
+### Born2beroot
+
+Proyecto centrado en administración de sistemas Linux y virtualización.
+
+**Competencias desarrolladas:**
+
+- Linux.
+- Seguridad.
+- Redes.
+- Usuarios y permisos.
+- Virtualización.
+
+---
+
+## Tecnologías
+
+- C
+- Linux
+- Shell
+- Git
+- VirtualBox
+- Unix Signals
+
+---
+
+## Habilidades Desarrolladas
+
+A través de estos proyectos he fortalecido competencias en:
+
+- Programación en C.
+- Resolución de problemas.
+- Debugging.
+- Gestión de memoria.
+- Programación de sistemas.
+- Administración Linux.
+- Trabajo colaborativo.
+- Aprendizaje autónomo.
+
 
 ---
 
